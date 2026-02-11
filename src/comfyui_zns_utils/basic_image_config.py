@@ -35,9 +35,6 @@ class BasicImageConfig:
                     "step": 1,
                     "display": "number"
                 }),
-                "flip_aspect_ratio": ("BOOLEAN", {
-                    "default": False,
-                }),
             }
         }
 
@@ -61,15 +58,8 @@ class BasicImageConfig:
 
     FUNCTION = "build"
 
-    def build(self, base_width, base_height, scale_by, batch_size, flip_aspect_ratio):
+    def build(self, base_width, base_height, scale_by, batch_size):
         scaled_width = int(base_width * scale_by)
         scaled_height = int(base_height * scale_by)
 
-        if flip_aspect_ratio:
-            base_width, base_height, scaled_width, scaled_height = (
-                base_height,
-                base_width,
-                scaled_height,
-                scaled_width,
-            )
         return base_width, base_height, scaled_width, scaled_height, batch_size
