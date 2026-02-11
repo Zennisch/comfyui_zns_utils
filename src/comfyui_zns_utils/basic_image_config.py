@@ -24,8 +24,8 @@ class BasicImageConfig:
                     "default": 1.0,
                     "min": 0.1,
                     "max": 4.0,
-                    "step": 0.01,
-                    "round": 0.01,
+                    "step": 0.5,
+                    "round": 0.1,
                     "display": "number"
                 }),
                 "batch_size": ("INT", {
